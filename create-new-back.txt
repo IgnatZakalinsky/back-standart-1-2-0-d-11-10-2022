@@ -1,0 +1,46 @@
+1) yarn init --yes
+2) yarn add express
+3) yarn add typescript ts-node @types/node @types/express nodemon --dev
+4) yarn tsc --init
+5) tsconfig.json:
+    "rootDir": "./src", // line 29
+    "outDir": "./dist", // line 52
+
+6) yarn add cors dotenv cookie-parser nodemailer
+7) yarn add @types/cors @types/cookie-parser supertest @types/supertest @types/nodemailer --dev
+
+8) .gitignore // create
+9) src/settings/config.ts // create
+10) src/common/errors.ts // create, globalCatch()
+11) .env // create
+12) src/index.ts // create
+
+13) "scripts": {
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "watch": "tsc -w",
+        "dev": "nodemon dist/index.js"
+     }, // yann watch, yarn dev
+
+14) yarn add jest @types/jest ts-jest @types/supertest supertest --dev
+15) jest.config.js // create
+16) package.json:
+"scripts": {
+    ...,
+    "test": "jest --config src/jest.config.js",
+    "test-w": "jest --config src/jest.config.js --watch",
+    "test-c": "jest --config src/jest.config.js --coverage"
+}
+17) src/check-env.test.ts // create
+18) src/common/routes.ts ; src/tests // create
+19) READE.md // create
+
+////////////
+
+) yarn add mongodb express-validator
+) yarn add mongodb-memory-server --dev
+) src/common/mongo.ts // create, runDB().then(...
+
+100) del ^
+
+
