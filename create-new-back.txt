@@ -35,6 +35,10 @@
 18) src/common/routes.ts ; src/tests // create
 19) READE.md // create
 
+20) yarn add mongodb
+21) src/common/runDB // create
+22) log repository
+
 ////////////
 
 ) yarn add mongodb express-validator

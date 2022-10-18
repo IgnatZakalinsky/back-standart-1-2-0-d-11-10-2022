@@ -33,6 +33,12 @@ Runs the server
 
 ## Change-logs
 
+18.10.2022:
+
+- connect to mongodb
+- log repository
+---
+
 11.10.2022:
 
 - create new app with new libs version

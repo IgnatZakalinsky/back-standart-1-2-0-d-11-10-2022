@@ -76,7 +76,7 @@ describe('Post Endpoints', () => {
             .get('/tc')
             .set('Cookie', ['c1=9;c2=11'])
 
-        console.log({body: res.body, headers: res.headers['set-cookie'][0]})
+        console.log({body: res.body, headers: res.headers, cookie: res.headers['set-cookie'][0]})
         expect(res.statusCode).toBe(200)
     })
 
