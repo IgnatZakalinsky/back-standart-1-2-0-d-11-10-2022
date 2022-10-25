@@ -1,6 +1,6 @@
-import {SETTINGS} from "../s1-settings/config";
-import {MongoClient} from "mongodb";
-import {destruct} from "./errors";
+import {SETTINGS} from '../s1-settings/config'
+import {MongoClient} from 'mongodb'
+import {destruct} from './errors'
 
 export const client = new MongoClient(SETTINGS.MONGO_DB_URIS)
 

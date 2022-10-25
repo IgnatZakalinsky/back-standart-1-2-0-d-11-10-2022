@@ -1,8 +1,17 @@
 import express from 'express'
+import {logRepository} from "../s2-common/compositioRoot";
 
 export const testsRoute = express.Router()
 
 testsRoute
+    .get(
+        '/test-log',
+        async (req, res) => {
+            // await logRepository.saveLog('error', 'uncaughtException', 'x').then()
+
+            res.status(200).json({x: 1})
+            // throw new Error('new')
+        })
     .get(
         '/t',
         (req, res) => res.status(200)

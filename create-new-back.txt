@@ -38,11 +38,11 @@
 20) yarn add mongodb
 21) src/common/runDB // create
 22) log repository
+23) yarn add mongodb-memory-server --dev
 
 ////////////
 
 ) yarn add mongodb express-validator
-) yarn add mongodb-memory-server --dev
 ) src/common/mongo.ts // create, runDB().then(...
 
 100) del ^

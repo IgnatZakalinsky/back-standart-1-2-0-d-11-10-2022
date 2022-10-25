@@ -1,11 +1,31 @@
-import {client} from "../../../s2-common/runDB";
+import {Collection} from 'mongodb'
+import {LogTagType, LogType} from './logCollection'
 
-export type LogType = {
-    tag: string
-    log: string
-    more: string
+export class LogRepository {
+    _lastSave: Omit<LogType,'createdAt'> = {tag: 'error', name: '', log: ''}
 
-    createdAt: string
+    constructor(public _logCollection: Collection<LogType>, private _tags: LogTagType[]) {
+    }
+
+    async saveLog(tag: LogTagType, name: string, log: string, more?: string) {
+        if (
+            this._tags.includes(tag)
+            && !( // не полное совпадение
+                this._lastSave.tag === tag
+                && this._lastSave.name === name
+                && this._lastSave.log === log
+                && this._lastSave.more === more
+            )
+        ) {
+            this._lastSave = {tag, log, more, name}
+
+            return await this._logCollection.insertOne({
+                tag,
+                name,
+                log,
+                more,
+                createdAt: new Date().toISOString(),
+            })
+        }
+    }
 }
-
-export const LogRepository = client.db('standards').collection<LogType>('st-logs')
